@@ -1,0 +1,2 @@
+route_id,service_id,trip_short_name,trip_headsign,route_short_name,direction_id,block_id,shape_id,wheelchair_accessible,trip_bikes_allowed,trip_id
+ROUTE_10,18,,,,,,30,0,0,17

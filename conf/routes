@@ -1,0 +1,70 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+GET     /scaffolding/                           Application.scaffolding
+GET     /search/                                Application.search
+GET     /route/{id}/.*                        	Application.route
+GET     /route/	                        		Application.route
+GET     /route/.*                        		Application.route
+
+GET     /export/gtfs                      		Application.exportGtfs
+GET     /export/creategtfs                      Application.createGtfs
+
+GET     /manage/routetypes                      Application.manageRouteTypes
+GET     /manage/agencies                      	Application.manageAgencies
+
+GET     /api/agency/?                           Api.getAgency
+GET     /api/agency/{id}                        Api.getAgency
+POST    /api/agency                             Api.createAgency
+PUT     /api/agency/{id}                        Api.updateAgency
+DELETE  /api/agency/{id}                        Api.deleteAgency
+
+GET     /api/route/?                            Api.getRoute
+GET     /api/route/{id}                         Api.getRoute
+POST    /api/route/                             Api.createRoute
+PUT     /api/route/{id}                         Api.updateRoute
+DELETE  /api/route/{id}                         Api.deleteRoute
+
+GET     /api/routetype/?                        Api.getRouteType
+GET     /api/routetype/{id}                     Api.getRouteType
+POST    /api/routetype/                         Api.createRouteType
+PUT     /api/routetype/{id}                     Api.updateRouteType
+DELETE  /api/routetype/{id}                     Api.deleteRouteType
+
+GET     /api/stop/?                             Api.getStop
+GET     /api/stop/{id}                          Api.getStop
+POST    /api/stop/                              Api.createStop
+PUT     /api/stop/{id}                          Api.updateStop
+DELETE  /api/stop/{id}                          Api.deleteStop
+
+GET     /api/trippattern/?                      Api.getTripPattern
+GET     /api/trippattern/{id}                   Api.getTripPattern
+POST    /api/trippattern/                       Api.createTripPattern
+PUT     /api/trippattern/{id}                   Api.updateTripPattern
+DELETE  /api/trippattern/{id}                   Api.deleteTripPattern
+
+GET     /api/calendar/?                         Api.getCalendar
+GET     /api/calendar/{id}                      Api.getCalendar
+POST    /api/calendar/                          Api.createCalendar
+PUT     /api/calendar/{id}                      Api.updateCalendar
+DELETE  /api/calendar/{id}                      Api.deleteCalendar
+
+GET     /api/trip/?                         	Api.getTrip
+GET     /api/trip/{id}                      	Api.getTrip
+POST    /api/trip/                          	Api.createTrip
+PUT     /api/trip/{id}                     		Api.updateTrip
+DELETE  /api/trip/{id}                      	Api.deleteTrip
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+

@@ -1,0 +1,6 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_direction
+STOP_19,,1,,49.44536797594364,7.772344350814819,,,0,,0,
+STOP_20,,2,,49.44062434022198,7.762366533279418,,,0,,0,
+STOP_21,,3,,49.43901977133786,7.764523029327393,,,0,,0,
+STOP_22,,4,,49.43003321534185,7.752453088760375,,,0,,0,
+STOP_23,,5,,49.42491823675547,7.749309539794922,,,0,,0,
