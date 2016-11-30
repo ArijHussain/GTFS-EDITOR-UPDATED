@@ -101,6 +101,12 @@ public class Route extends Model {
          {
         	 pattern.delete();
          }
+
+        List<Trip> trips = Trip.find("route = ?", this).fetch();
+        for(Trip trip : trips)
+        {
+            trip.delete();
+        }
     	
     	return super.delete();
     }

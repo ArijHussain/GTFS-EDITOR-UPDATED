@@ -3,6 +3,7 @@ package models.transit;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
@@ -145,5 +146,14 @@ Query q;
     	
     	return stopTimes;
     }
-    
+
+    public Trip delete(){
+
+		List<StopTime> stopTimes = StopTime.find("trip = ?",this).fetch();
+		for(StopTime stopTime:stopTimes){
+			stopTime.delete();
+		}
+
+		return super.delete();
+	}
 }   

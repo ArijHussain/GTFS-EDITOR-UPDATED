@@ -42,10 +42,14 @@ import models.transit.TripPattern;
 import models.transit.TripPatternStop;
 import models.transit.TripShape;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 public class Api extends Controller {
 
     private static ObjectMapper mapper = new ObjectMapper();
     private static JsonFactory jf = new JsonFactory();
+   // private EntityManager= new EntityManager();
 
     private static String toJson(Object pojo, boolean prettyPrint)
             throws JsonMappingException, JsonGenerationException, IOException {
@@ -132,7 +136,14 @@ public class Api extends Controller {
         if(agency == null)
             badRequest();
 
+        /*List<Route> routes = new ArrayList<Route>();
 
+        Route route = Route.find("agency = ?", agency);
+
+       // for(Route route:routes){
+            System.out.println(route.getId());
+       // }
+*/
         agency.delete();
 
         ok();
