@@ -1,6 +1,0 @@
-trip_id,stop_sequence,stop_id,arrival_time,departure_time,stop_headsign,route_short_name,pickup_type,drop_off_type,shape_dist_traveled
-17,1,STOP_19,00:00:00,00:00:00,,,0,0,
-17,2,STOP_20,00:02:00,00:02:00,,,0,0,
-17,3,STOP_21,00:04:00,00:04:00,,,0,0,
-17,4,STOP_22,00:07:00,00:07:00,,,0,0,
-17,5,STOP_23,00:09:00,00:09:00,,,0,0,

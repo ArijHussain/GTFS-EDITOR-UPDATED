@@ -1,2 +1,0 @@
-agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color,route_bikes_allowed,route_id
-SWK,115,Sdadtmitte to Uni,,3,,,,0,ROUTE_10
