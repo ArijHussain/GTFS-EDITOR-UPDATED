@@ -339,9 +339,10 @@ public class ProcessGtfsSnapshotExport extends Job {
 									
 									s.setCode(stop.stopCode);
 									s.setName(stop.stopName);
-									s.setDesc(stop.stopDesc.replace("\n", "").replace("\r", ""));
+									if(stop.stopDesc != null)
+										s.setDesc(stop.stopDesc.replace("\n", "").replace("\r", ""));
 									s.setUrl(stop.stopUrl);
-									
+									System.out.println("stop.location.getX()============="+stop.stopName);
 									s.setLon(stop.location.getX());
 									s.setLat(stop.location.getY());
 									
