@@ -1,7 +1,8 @@
 package jobs;
 
-import java.io.File;
+import java.io.*;
 import java.math.BigInteger;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -377,6 +378,32 @@ public class ProcessGtfsSnapshotExport extends Job {
             System.out.println("GTFS directory **************************"+gtfsDirectory);
 
             DirectoryZip.zip(gtfsDirectory, gtfsZip);
+
+
+			//ToDo : Add autodownload code
+/*
+			String fileName = "file.txt"; //The file that will be saved on your computer
+			URL link = new URL("http://shayconcepts.com"); //The file that you want to download
+
+			//Code to download
+			InputStream in = new BufferedInputStream(link.openStream());
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			byte[] buf = new byte[1024];
+			int n = 0;
+			while (-1!=(n=in.read(buf)))
+			{
+				out.write(buf, 0, n);
+			}
+			out.close();
+			in.close();
+			byte[] response = out.toByteArray();
+
+			FileOutputStream fos = new FileOutputStream(fileName);
+			fos.write(response);
+			fos.close();
+			//End download code*/
+
+
 			FileUtils.deleteDirectory(gtfsDirectory);
 			
 			snapshotExport.status = GtfsSnapshotExportStatus.SUCCESS;

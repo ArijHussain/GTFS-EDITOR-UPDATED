@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import models.gtfs.GtfsSnapshotExport;
 import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonManagedReference;
@@ -104,6 +105,11 @@ public class Agency extends Model {
             tripShape.delete();
         }
 
+        List<GtfsSnapshotExport> gtfsSnapshotExports = GtfsSnapshotExport.find("select g from GtfsSnapshotExport g join p.agencies type where type.gtfsAgencyId = ?", this.gtfsAgencyId).fetch();
+
+        for(GtfsSnapshotExport gtfsSnapshotExport:gtfsSnapshotExports){
+            gtfsSnapshotExport.delete();
+        }
         return super.delete();
 
     }
