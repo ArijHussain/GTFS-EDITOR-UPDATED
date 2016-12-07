@@ -105,7 +105,7 @@ public class Agency extends Model {
             tripShape.delete();
         }
 
-        List<GtfsSnapshotExport> gtfsSnapshotExports = GtfsSnapshotExport.find("select g from GtfsSnapshotExport g join p.agencies type where type.gtfsAgencyId = ?", this.gtfsAgencyId).fetch();
+        List<GtfsSnapshotExport> gtfsSnapshotExports = GtfsSnapshotExport.find("select g from GtfsSnapshotExport g join g.agencies type where type.gtfsAgencyId = ?", this.gtfsAgencyId).fetch();
 
         for(GtfsSnapshotExport gtfsSnapshotExport:gtfsSnapshotExports){
             gtfsSnapshotExport.delete();
